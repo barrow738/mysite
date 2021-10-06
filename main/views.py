@@ -1,11 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from .models import TodoList, Item
 
 # Create your views here.
-def index(response):
-    return HttpResponse("<h1>Tech with tim tutorial</h1>")
-
-
-def view(response):
-    return HttpResponse("<h1>This is the first view which is another page</h1>")
+def index(response, id):
+    ls = TodoList.objects.get(id=id)
+    return HttpResponse("<h1>%s</h1>" %ls.name)
