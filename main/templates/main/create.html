@@ -3,7 +3,9 @@
 {% block content %}
 <h4>This is the create todo page</h4>
 <form method="post" action="/create/">
+    {% csrf_token %}
     {{form}}
+<!--    {{form.as_p}} form items arranged vertically the is also as_table-->
     <button type="submit" name="save">Submit</button>
 </form>
 {% endblock %}
