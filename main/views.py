@@ -6,8 +6,10 @@ from .models import TodoList, Item
 def index(response, id):
     ls = TodoList.objects.get(id=id)
     # return HttpResponse("<h1>%s</h1>" %ls.name)
+    # return render(response, "main/base.html", {"name": ls.name})
     return render(response, "main/base.html", {})
 
 
 def home(response):
+    # return render(response, "main/home.html", {"name": "Just testing"})
     return render(response, "main/home.html", {})
